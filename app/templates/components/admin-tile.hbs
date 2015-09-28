@@ -1,0 +1,14 @@
+{{#if displayAdminTile}}
+<div class="admin">
+  {{#each model as |category|}}
+    {{category.name}}
+    {{add-subcategory category=category saveSubCategory='saveSubCategory'}}
+    {{#each category.subcategories as |subcategory|}}
+    {{subcategory.name}}
+    {{/each}}
+  {{/each}}
+</div>
+{{else}}
+<a {{action 'openAdminTile'}}>Admin</a>
+{{/if}}
+{{yield}}

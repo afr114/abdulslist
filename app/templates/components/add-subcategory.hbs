@@ -1,0 +1,11 @@
+{{#if addNewSubCategory}}
+<form>
+  <div>
+    <label for="name">text</label>
+    {{input value=name id="name" placeholder="type name here..."}}
+  </div>
+  <button {{action 'saveSubCategory'}}>Submit</button>
+</form>
+{{else}}
+  <button {{action 'addSubCategory'}}>Add Subcategory</button>
+{{/if}}
