@@ -1,0 +1,21 @@
+{{#if addNewListingForm}}
+<form>
+  <label for="name">Name</label>
+  {{input value=name id="name" placeholder="type name here..."}}
+
+  <label for="description">description</label>
+  {{input value=description id="description"}}
+
+  <label for="price">price</label>
+  {{input value=price id="price"}}
+
+  <label for="image">image</label>
+  {{input value=image id="image"}}
+
+  <button {{action 'saveNewListing'}}>Submit</button>
+</form>
+{{else}}
+  <button {{action 'addnewListing'}}>Add New Listing</button>
+{{/if}}
+
+{{yield}}
