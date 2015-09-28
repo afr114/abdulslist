@@ -1,11 +1,12 @@
 {{#if displayAdminTile}}
 <div class="admin">
+  <a {{action 'closeAdminTile'}}>Admin</a> <br>
   {{#each model as |category|}}
-    {{category.name}}
+    <!-- {{category.name}} -->
     {{add-subcategory category=category saveSubCategory='saveSubCategory'}}
-    {{#each category.subcategories as |subcategory|}}
+    <!-- {{#each category.subcategories as |subcategory|}}
     {{subcategory.name}}
-    {{/each}}
+    {{/each}} -->
   {{/each}}
 </div>
 {{else}}

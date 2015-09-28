@@ -1,6 +1,12 @@
 <div class="index">
-  {{admin-tile model=model}}
+  {{admin-tile model=model saveSubCategory='saveSubCategory'}}
 </div>
+  {{#each model as |category|}}
+  {{category.name}}
+  {{#each category.subcategories as |subcategory|}}
+  {{#link-to 'subcategory' subcategory.id}}{{subcategory.name}}{{/link-to}}
+  {{/each}}
+  {{/each}}
 
-
+{{model}}
 {{outlet}}

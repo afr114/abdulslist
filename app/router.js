@@ -6,6 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('subcategory', {path: 'subcategory/:subcategory_id'});
 });
 
 export default Router;
