@@ -1,5 +1,5 @@
 <div class="index">
-  {{admin-tile model=model saveSubCategory='saveSubCategory'}}
+  {{admin-tile model=model saveSubCategory='saveSubCategory' destroyCategory="destroyCategory" saveCategory='saveCategory'}}
 </div>
   {{#each model as |category|}}
   {{category.name}}
@@ -8,5 +8,4 @@
   {{/each}}
   {{/each}}
 
-{{model}}
 {{outlet}}

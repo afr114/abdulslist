@@ -12,6 +12,15 @@ export default Ember.Component.extend({
 
     saveSubCategory(params) {
       this.sendAction('saveSubCategory', params)
+    },
+
+    destroyCategory(category){
+      if (confirm('Are you sure you want to delete this category?')) {
+        this.sendAction('destroyCategory', category);
+      }
+    },
+      saveCategory(params){
+        this.sendAction('saveCategory', params)
+      }
     }
-  }
 });

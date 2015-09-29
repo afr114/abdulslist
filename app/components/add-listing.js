@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   addNewListingForm: false,
 
   actions: {
-    addnewListing() {
+    addNewListing() {
       this.set('addNewListingForm', true);
     },
 

@@ -2,14 +2,13 @@
 <div class="admin">
   <a {{action 'closeAdminTile'}}>Admin</a> <br>
   {{#each model as |category|}}
-    <!-- {{category.name}} -->
-    {{add-subcategory category=category saveSubCategory='saveSubCategory'}}
-    <!-- {{#each category.subcategories as |subcategory|}}
-    {{subcategory.name}}
-    {{/each}} -->
+  {{category.name}} {{add-subcategory category=category saveSubCategory='saveSubCategory'}}
+   <button {{action 'destroyCategory' category}}>Delete</button>
   {{/each}}
 </div>
 {{else}}
 <a {{action 'openAdminTile'}}>Admin</a>
 {{/if}}
+{{add-category saveCategory='saveCategory'}}
+<hr>
 {{yield}}

@@ -1,0 +1,11 @@
+{{#if addNewCategoryForm}}
+<form>
+  <label for="name">Name</label>
+  {{input value=name id="name" placeholder="type name here..."}}
+
+  <button {{action 'saveCategory'}}>Submit</button>
+</form>
+{{else}}
+  <button {{action 'addNewCategory'}}>Add New Category</button>
+{{/if}}
+{{yield}}
