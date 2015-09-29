@@ -16,6 +16,7 @@ export default Ember.Component.extend({
         image: this.get('image'),
         subcategory: this.get('subcategory'),
       };
+      // debugger;
       this.set('addNewListingForm', false),
       this.sendAction('saveNewListing', params);
     }

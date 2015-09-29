@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model(params) {
     return this.store.findRecord('subcategory', params.subcategory_id);
+
   },
 
   actions: {
@@ -13,7 +14,7 @@ export default Ember.Route.extend({
       newListing.save().then(function(){
         return subcategory.save();
       });
-      this.transitionTo('subcategory', params.subcategory_id)
+      this.transitionTo('subcategory', params.subcategory.id)
     }
   }
 });

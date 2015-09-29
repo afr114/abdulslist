@@ -23,22 +23,23 @@ export default Ember.Route.extend({
     },
 
     destroyCategory(category) {
-      var subcategory_deletions = category.get('subcategories').map(function(subcategory) {
-        // var listing_deletions = subcategory.get('listings').map(function(listing) {
-        //   return listing.destroyRecord();
-        return subcategory.destroyRecord();
+      category.get('subcategories').then(function(subcategories) {
+        subcategories.forEach(function(subcategory){
+          subcategory.get('listings').then(function(listings){
+            listings.forEach(function(listing){
+              console.log(listing.get('name'));
+            // listing.destroyRecord();
+            });
+          });
+              // console.log(subcategory);
+              // console.log("subcategory");
+          console.log(subcategory.get('name'));
+          // subcategory.destroyRecord();
         });
-        // return listing_deletions
-      // });
+         console.log(category.get('name'));
+        });
 
-      // Ember.RSVP.all(listing_deletions)
-      //   .then(function() {
-          Ember.RSVP.all(subcategory_deletions)
-            .then(function() {
-              return category.destroyRecord();
-            })
-          // });
-        this.transitionTo('index');
+      this.transitionTo('index');
       }
     }
   });
