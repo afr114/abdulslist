@@ -28,13 +28,10 @@ export default Ember.Route.extend({
           subcategory.get('listings').then(function(listings){
             listings.forEach(function(listing){
               console.log(listing.get('name'));
-            // listing.destroyRecord();
             });
           });
-              // console.log(subcategory);
-              // console.log("subcategory");
+
           console.log(subcategory.get('name'));
-          // subcategory.destroyRecord();
         });
          console.log(category.get('name'));
         });
